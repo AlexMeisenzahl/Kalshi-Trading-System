@@ -1,0 +1,33 @@
+# ─────────────────────────────────────────────────────────────────────────────
+#  Kalshi-Claw  |  Environment Configuration
+#  Copy to .env, fill in your keys, then run the bot.
+#  Never commit .env to version control.
+# ─────────────────────────────────────────────────────────────────────────────
+
+# ── Kalshi ────────────────────────────────────────────────────────────────────
+# Get your API key from: https://kalshi.com → Account → API Keys
+KALSHI_API_KEY=your-api-key-uuid-here
+
+# RSA private key in PKCS#1 PEM format (multi-line, or path to .pem file)
+KALSHI_PRIVATE_KEY="-----BEGIN RSA PRIVATE KEY-----
+paste_your_rsa_private_key_here
+-----END RSA PRIVATE KEY-----"
+
+# true = Kalshi demo environment (paper money — safe for testing)
+# false = Kalshi production environment (real money)
+KALSHI_USE_DEMO=true
+
+# ── OpenRouter (LLM for hedge analysis) ───────────────────────────────────────
+# Get a free key at: https://openrouter.ai/settings/keys
+OPENROUTER_API_KEY=sk-or-v1-your-key-here
+
+# LLM model to use for hedge analysis (free tier works great)
+KALSHI_LLM_MODEL=nvidia/nemotron-nano-8b-instruct:free
+
+# ── Bot behaviour ─────────────────────────────────────────────────────────────
+# Maximum USD per trade leg
+MAX_BET=25
+
+# DRY_RUN: true = simulate only (no real orders)
+#           false = place real orders on Kalshi
+DRY_RUN=true
