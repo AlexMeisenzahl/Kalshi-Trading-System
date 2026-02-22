@@ -1,35 +1,29 @@
 {
-  "name": "kalshi-claw",
-  "version": "0.1.0",
-  "description": "Trading-enabled Kalshi skill for OpenClaw — browse markets, execute trades, track positions, discover hedges. Rust + TypeScript.",
-  "license": "MIT",
-  "private": true,
-
+  "name": "Kalshi-Claw",
+  "version": "1.5.14",
+  "description": "Kalshi Claw - Integration utilities",
+  "main": "src/index.js",
+  "types": "src/index.d.ts",
+  "files": [
+    "src",
+    "scripts/setup.js",
+    "scripts/postinstall.js",
+    "scripts/build.js"
+  ],
+  "bin": {
+    "Kalshi-Claw": "./scripts/setup.js"
+  },
   "scripts": {
-    "build:rust":  "napi build --platform --release",
-    "build:ts":    "tsc --noEmit",
-    "dev":         "tsx scripts/kalshi-claw.ts",
-    "start":       "node dist/scripts/kalshi-claw.js",
-    "test":        "jest --passWithNoTests",
-    "lint":        "eslint 'scripts/**/*.ts' 'lib/**/*.ts'"
+    "start": "node src/index.js",
+    "build": "node scripts/build.js",
+    "lint": "eslint src/**/*.js",
+    "test": "jest"
   },
-
-  "dependencies": {},
-
-  "devDependencies": {
-    "@napi-rs/cli":          "^2.18.4",
-    "@types/node":           "^20.14.0",
-    "tsx":                   "^4.15.0",
-    "typescript":            "^5.4.0",
-    "jest":                  "^29.7.0",
-    "ts-jest":               "^29.1.0",
-    "@types/jest":           "^29.5.0",
-    "eslint":                "^9.4.0",
-    "@typescript-eslint/eslint-plugin": "^7.12.0",
-    "@typescript-eslint/parser":        "^7.12.0"
-  },
-
-  "engines": {
-    "node": ">=20.0.0"
-  }
+  "license": "MIT",
+  "keywords": [
+    "utility",
+    "sdk",
+    "integration"
+  ],
+  "dependencies": {}
 }
